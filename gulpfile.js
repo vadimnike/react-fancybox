@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var initGulpTasks = require('react-component-gulp-tasks');
@@ -10,13 +11,6 @@ var initGulpTasks = require('react-component-gulp-tasks');
  *
  * You can also add your own additional gulp tasks if you like.
  */
-
-gulp.task('sass', function () {
-	return gulp.src('./sass/react-fancybox.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./dist'));
-});
-
 var taskConfig = {
 	component: {
 		name: 'Fancybox',
@@ -45,3 +39,10 @@ var taskConfig = {
 };
 
 initGulpTasks(gulp, taskConfig);
+
+gulp.task('sass', function () {
+	return gulp.src('./sass/react-fancybox.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('./dist'));
+});
+
