@@ -3,7 +3,7 @@
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+	value: true
 });
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -21,73 +21,75 @@ var _react = (typeof window !== "undefined" ? window['React'] : typeof global !=
 var _react2 = _interopRequireDefault(_react);
 
 var Fancybox = (function (_React$Component) {
-  _inherits(Fancybox, _React$Component);
+	_inherits(Fancybox, _React$Component);
 
-  function Fancybox() {
-    _classCallCheck(this, Fancybox);
+	function Fancybox() {
+		_classCallCheck(this, Fancybox);
 
-    _get(Object.getPrototypeOf(Fancybox.prototype), 'constructor', this).call(this);
-    this.state = {
-      showBox: false
-    };
-  }
+		_get(Object.getPrototypeOf(Fancybox.prototype), 'constructor', this).call(this);
+		this.state = {
+			showBox: false
+		};
+	}
 
-  _createClass(Fancybox, [{
-    key: 'showBox',
-    value: function showBox(event) {
-      event.preventDefault();
-      this.setState({
-        showBox: true
-      });
-    }
-  }, {
-    key: 'onBoxClick',
-    value: function onBoxClick(event) {
-      event.preventDefault();
-      if (event.target != this.refs.imageInBox) {
-        this.setState({
-          showBox: false
-        });
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var box = '';
-      if (this.state.showBox) {
-        box = _react2['default'].createElement(
-          'div',
-          { onClick: this.onBoxClick.bind(this), ref: 'box', className: 'fancy-box' },
-          _react2['default'].createElement('img', { ref: 'imageInBox', src: this.props.imageUrl }),
-          _react2['default'].createElement(
-            'div',
-            null,
-            this.props.caption
-          )
-        );
-      }
-      return _react2['default'].createElement(
-        'div',
-        null,
-        _react2['default'].createElement('img', { onClick: this.showBox.bind(this), src: this.props.imageUrl, className: this.props.imageClassName }),
-        box
-      );
-    }
-  }]);
+	_createClass(Fancybox, [{
+		key: 'showBox',
+		value: function showBox(event) {
+			event.preventDefault();
+			this.setState({
+				showBox: true
+			});
+		}
+	}, {
+		key: 'onBoxClick',
+		value: function onBoxClick(event) {
+			event.preventDefault();
+			if (event.target != this.refs.imageInBox) {
+				this.setState({
+					showBox: false
+				});
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var box = '';
+			if (this.state.showBox) {
+				box = _react2['default'].createElement(
+					'div',
+					{ onClick: this.onBoxClick.bind(this), ref: 'box', className: this.props.boxClassName },
+					_react2['default'].createElement('img', { ref: 'imageInBox', src: this.props.imageUrl }),
+					_react2['default'].createElement(
+						'div',
+						null,
+						this.props.caption
+					)
+				);
+			}
+			return _react2['default'].createElement(
+				'div',
+				null,
+				_react2['default'].createElement('img', { onClick: this.showBox.bind(this), src: this.props.imageUrl, className: this.props.imageClassName }),
+				box
+			);
+		}
+	}]);
 
-  return Fancybox;
+	return Fancybox;
 })(_react2['default'].Component);
 
 Fancybox.propTypes = {
-  caption: _react2['default'].PropTypes.string,
-  imageClassName: _react2['default'].PropTypes.string,
-  imageUrl: _react2['default'].PropTypes.string
+	boxClassName: _react2['default'].PropTypes.string,
+	caption: _react2['default'].PropTypes.string,
+	imageClassName: _react2['default'].PropTypes.string,
+	imageUrl: _react2['default'].PropTypes.string
 };
 
 Fancybox.defaultProps = {
-  caption: '',
-  imageClassName: 'fancybox-img',
-  imageUrl: ''
+	caption: '',
+	imageClassName: 'fancybox-img',
+	imageUrl: '',
+	boxClassName: 'fancybox'
 };
 
 exports['default'] = Fancybox;
