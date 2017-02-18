@@ -21,19 +21,16 @@ __BASIC USAGE__
 import Fancybox from 'react-fancybox';
 
 <ReactFancybox imageUrl={url}/>
+
+import style to your scss file
+```
+```
+@import "~react-fancybox/sass/react-fancybox.scss";
+or 
+@import "~react-fancybox/dist/react-fancybox.css";
 ```
 
-### Properties
-
-* __DOCUMENT PROPERTIES HERE__
-
-### Notes
-
-__ADDITIONAL USAGE NOTES__
-
-
 ## License
-
 
 2017 Giang Le.
 
